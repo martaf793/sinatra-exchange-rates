@@ -1,2 +1,11 @@
-<h1>HOMEPAGE
+<h1>Currency pairs
 </h1>
+<ul>
+<% @list_currencies.each do |a| %>
+  <li>
+    <a href= "/:currency_o">
+    Convert 1 <%= a %> to...
+    </a>
+  </li>
+<% end %>
+</ul>
