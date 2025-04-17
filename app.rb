@@ -17,6 +17,7 @@ get("/") do
   # pp currencies.class
   erb(:home)
 end
+
 get("/:currency_o") do
   @currency_o=params.fetch("currency_o")
   erb(:origin)
