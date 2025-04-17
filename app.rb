@@ -7,3 +7,4 @@ get("/") do
   <p>Define some routes in app.rb</p>
   "
 end
+#ENV.fetch(exchange_key)
