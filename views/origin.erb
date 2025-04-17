@@ -1,4 +1,16 @@
 <h1>
 Convert <%=@currency_o%>
 </h1>
+<p>Go <a href="/">back</a>.</p>
+<ul>
+<% @list_currencies.each do |a| %>
+  <li>
+    <a href= "/:currency_o/:currency_d>
+    Convert 1 <%=@currency_o%> to <%= a %>
+    </a>
+  </li>
+<% end %>
+</ul>
+
+<p>Go <a href="/">back</a>.</p>
 <%= params %>
