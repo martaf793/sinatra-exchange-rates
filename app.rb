@@ -31,16 +31,16 @@ end
 get("/:currency_o/:currency_d") do
   @currency_o=params.fetch("currency_o").upcase
   @currency_d=params.fetch("currency_d").upcase
-
-  erate_convert_url="https://api.exchangerate.host/convert?access_key=" + ENV.fetch("EXCHANGE_KEY") + "from=" + @currency_o + "&to=" +@currency_d +"&amount=1"
-  pp erate_convert_url
-  erate_convert_api=HTTP.get(erate_convert_url).to_s
+  erate_convert_url="https://api.exchangerate.host/convert?from=" + @currency_o + "&to=" +@currency_d+ "&amount=1&access_key=" + ENV.fetch("EXCHANGE_KEY")
+  # erate_convert_url="https://api.exchangerate.host/convert?access_key=" + ENV.fetch("EXCHANGE_KEY") + "from=" + @currency_o + "&to=" + @currency_d +"&amount=1"
+  #pp erate_convert_url
+  @erate_convert_api=HTTP.get(erate_convert_url).to_s
   #pp erate_convert_api
-  parse_erate_c_body = JSON.parse(erate_convert_api)
+  @parse_erate_c_body = JSON.parse(@erate_convert_api)
   #pp parse_erate_c_body.keys
-  # currencies=parse_erate_l_body.fetch("currencies")
-  # @list_currencies = currencies.keys
-  # pp currencies.class
+  @keys_c= @parse_erate_c_body.keys
+  @info= @parse_erate_c_body.fetch("info")
+  @quote= @info.fetch("quote")
 
   erb(:conversion)
 end
