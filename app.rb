@@ -39,8 +39,8 @@ get("/:currency_o/:currency_d") do
   @parse_erate_c_body = JSON.parse(@erate_convert_api)
   #pp parse_erate_c_body.keys
   @keys_c= @parse_erate_c_body.keys
-  @info= @parse_erate_c_body.fetch("info")
-  @quote= @info.fetch("quote")
+  # @info= @parse_erate_c_body.fetch("info")
+  @result= @parse_erate_c_body.fetch("result")
 
   erb(:conversion)
 end

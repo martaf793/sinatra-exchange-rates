@@ -3,7 +3,7 @@
 <ul>
 <% @list_currencies.each do |a| %>
   <li>
-    <a href= "/" + <%= a %>">
+    <a href= "/<%= a %>"> <!--here write well, not "/" <%#=a%>-->
     Convert 1 <%= a %> to...
     </a>
   </li>

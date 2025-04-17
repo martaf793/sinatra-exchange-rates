@@ -5,7 +5,7 @@ Convert <%=@currency_o%>
 <ul>
 <% @list_currencies.each do |a| %>
   <li>
-    <a href= "/:currency_o/:currency_d>
+    <a href= "/<%=@currency_o%>/<%= a %>"> <!--here write well, not "/:currency_o/:currency_d"-->
     Convert 1 <%=@currency_o%> to <%= a %>
     </a>
   </li>
